@@ -1,9 +1,13 @@
-var PDF = PDFLib.PDFDocument, deg = PDFLib.degrees, oldPdf, newPdf, pdfDoc, pdfLength, pdfName, saveFile="";
+// GLOBAL VARIABELS
+var PDF=PDFLib.PDFDocument, deg=PDFLib.degrees, oldPdf, newPdf, pdfDoc, pdfLength, pdfName, saveFile="";
+
+// SERVICEWORKER
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register("./sw.js")
   .then((reg) => console.log("sw Registred", reg))
   .catch((err) => console.log ("sw NOT Registred !", err));}
 
+// GLOBAL FUNCTIONS
 cl = (txt) => console.log(txt);
 qs = (el, parent = document) => parent.querySelector(el);
 Msgbox = (title,txt) => {qs("#msgbox").classList.toggle("mask-show"); qs("#msgbox").children[0].classList.toggle("msgbox-show"); qs("#msg-title").innerText=title; qs("#msg-txt").innerHTML=txt; }
